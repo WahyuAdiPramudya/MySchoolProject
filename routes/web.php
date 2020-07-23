@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('guru','Guru\DashboardController@index');
+
+Route::get('staff','Staff\DashboardController@index');
+
+Route::get('SuperAdmin','SuperAdmin\DashboardController@index');
