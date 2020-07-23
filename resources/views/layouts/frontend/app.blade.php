@@ -17,6 +17,7 @@
       display: flex;
       min-height: 100vh;
       flex-direction: column;
+      background-image: url('{{ asset('assets/frontend/image/bg2.png') }}');
     }
     @media only screen and (min-width: 993px){
     nav a.button-collapse {
@@ -26,6 +27,10 @@
     nav {
       background-color: #04b3fc;
       
+    }
+    .username{
+      color: white;
+      font-size: 20px;
     }
 
     nav .brand-logo {
@@ -60,10 +65,10 @@
       color: #04b3fc;
     }
 
-
     .gambar {
       max-height: 5vh !important;
       max-width: 5vh !important;
+
     }
   </style>
 
@@ -93,7 +98,11 @@
   <script type="text/javascript" src="{{ URL::to('/') }}offline_material/materalize.min.js"></script>
   <script>
     $(document).ready(function(){
-   $('.slider').slider();       
+   $('.slider').slider();  
+    $('.dropdown-trigger').dropdown(); 
+    $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });    
 });
 </script>
  

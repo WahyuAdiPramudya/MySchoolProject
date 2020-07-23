@@ -5,33 +5,12 @@
 Informasi
 <div class="col s12">
     <div class="row">
-            <div class="carousel carousel-slider" style="height: 220px; border-radius:20px;">
-                <div class="slider fullscreen">
-                    <ul class="slides">
-                        <li>
-                        <img src="{{asset('image/rtrw.jpg')}}"> <!-- random image -->
-                        <div class="caption center-align">
-                            <h3>Selamat Datang </h3>
-                            <h5 class="light grey-text text-lighten-5">Di RTRWTERPADU.NET</h5>
-                        </div>
-                        </li>
-                        <li>
-                        <img src="{{asset('image/iuran.jpg')}}"> <!-- random image -->
-                        <div class="caption left-align">
-                            <h3>Iuran Warga</h3>
-                            <h5 class="light grey-text text-lighten-3">Jadi Lebih Mudah</h5>
-                        </div>
-                        </li>
-                        <li>
-                        <img src="{{asset('image/tong-tong.jpg')}}"> <!-- random image -->
-                        <div class="caption right-align">
-                            <h3>Klik Tong Tong</h3>
-                            <h5 class="light grey-text text-lighten-3">Mengintegrasi Seluruh Warga</h5>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+             <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+                <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+                <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+                <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+          </div>
         </div>
     </div>
     menu
@@ -100,8 +79,8 @@ Informasi
             <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/tagihan.png')}}" alt="" class="responsive-img gambar"></a>
            </div>
         <small>Tagihan</small>
-    		</div>
-	</div>
+            </div>
+    </div>
 </div>
 </div>
 </div>
