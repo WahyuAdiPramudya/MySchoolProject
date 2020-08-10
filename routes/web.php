@@ -17,10 +17,6 @@ Route::get('/', function () {
 
 Route::get('guru','Guru\DashboardController@index');
 
-
-Route::get('/guru2', function(){
-	return view('guru.index2');
-});
 Route::get('staff','Staff\DashboardController@index');
 
 Route::get('SuperAdmin','SuperAdmin\DashboardController@index');
