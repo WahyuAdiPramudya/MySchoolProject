@@ -1,16 +1,24 @@
-<nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">School System</a>
+ <div class="app-admin-wrap layout-sidebar-large clearfix">
+        <div class="main-header">
+            <div class="logo">
+                <img src="{{ asset('assets/backend/assets/images/logo.png')}}" alt="">
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                    <!-- #END# Call Search -->
-                </ul>
+
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+
+            <div class="d-flex align-items-center">
+                <!-- Mega menu -->
+                <div class="dropdown mega-menu d-none d-md-block">
+                   </div>
+                <!-- / Mega menu -->
+                
+            </div>
+
+            <div style="margin: auto"></div>
+
+          
         </div>
-    </nav>

@@ -10,14 +10,40 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// route login
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+})->name('home');
+
+Route::group(['as' => 'login'], function(){
+    Route::get('/login', 'Auth\LoginController@login')->name('login');
+    Route::post('/postlogin', 'Auth\LoginController@multilogin');
+    Route::get('/logout', 'Auth\LoginController@logout');
+    Route::get('/register','Auth\RegisterController@index');
+    Route::post('/register','Auth\RegisterController@register');
 });
 
-Route::get('guru','Guru\DashboardController@index');
+
+
+//  -- ROUTE STAFF -- 
+Route::group(['as' => 'staff', 'middleware' => 'auth','staff'], function(){
 
 Route::get('staff','Staff\DashboardController@index');
+    
+});
 
+//  -- ROUTE GURU -- 
+Route::group(['as' => 'guru','middleware' => 'auth','guru'], function(){
+
+Route::get('guru','Guru\DashboardController@index');
+ 
+});
+
+
+// -- ROUTE SUPERADMIN -- 
+Route::group(['as' => 'SuperAdmin' , 'middleware' => 'auth' ],function(){
 Route::get('SuperAdmin','SuperAdmin\DashboardController@index');
+});
+
+
 

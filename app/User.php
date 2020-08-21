@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nama_lengkap', 'email', 'no_telp','password','status','role_id','id_sekolah','nisn_siswa',
     ];
 
     /**
@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sekolah(){
+        return $this->belongsTo('App\Sekolah','id_sekolah','id_sekolah');
+    }
+
+    public function role(){
+        return $this->belongsTo('App\Role','id_role','id_role');
+    }
 }

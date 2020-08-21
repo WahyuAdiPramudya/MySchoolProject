@@ -2,70 +2,32 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use Illuminate\Http\Request;
+use DB;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
-
+use App\Sekolah;
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function index()
     {
-        $this->middleware('guest');
+       
+        $sekolah = Sekolah::all();
+        return view('auth.register',compact('sekolah'));
     }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function register()
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
+        $data = array(
+            'nama_lengkap' => input::get('nama_lengkap'),
+            'email'        => input::get('email'),
+            'no_telp'      => input::get('no_telp'),
+            'password'     => bcrypt(input::get('password')),
+            'status'       => input::get('status'),
+            'role_id'      => input::get('role_id'),
+            'id_sekolah'   => input::get('id_sekolah'),
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        );
+        DB::table('users')->insert($data);
+        return redirect('/login');
     }
 }

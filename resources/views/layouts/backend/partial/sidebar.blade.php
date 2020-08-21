@@ -1,38 +1,99 @@
-<aside id="leftsidebar" class="sidebar">
-            <!-- User Info -->
-            <div class="user-info">
-                <div class="image">
-                <img src="{{asset('assets/backend/images/user.png')}}" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-                <div class="email"></div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="separator" class="divider"></li>
-                
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- #User Info -->
-            <!-- Menu -->
-            <div class="menu">
-               
-                    
-            </div>
-            <!-- #Menu -->
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.5
-                </div>
-            </div>
-            <!-- #Footer -->
-        </aside>
-        
+<div class="side-content-wrap">
+    <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
+        <ul class="navigation-left">
+            <li class="nav-item " >
+                <a class="nav-item-hold" href="#">
+                    <i class="nav-icon i-Bar-Chart"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item " data-item="widgets">
+                <a class="nav-item-hold" href="#">
+                    <i class="nav-icon i-Windows-2"></i>
+                    <span class="nav-text">laporan</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+
+            <li class="nav-item " >
+                <a class="nav-item-hold" href="">
+                    <i class="nav-icon i-Administrator"></i>
+                    <span class="nav-text">Siswa</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item " data-item="data-master">
+                <a class="nav-item-hold" href="#">
+                    <i class="nav-icon i-File-Clipboard-File--Text"></i>
+                    <span class="nav-text">Data Master</span>
+                </a>
+                <div class="triangle"></div>
+            </li>  
+            <li class="nav-item " >
+                <a class="nav-item-hold" href="/logout">
+                    <i class="nav-icon i-Double-Tap"></i>
+                    <span class="nav-text">Logout</span>
+                </a>
+                <div class="triangle"></div>
+            </li> 
+        </ul>
+    </div>
+
+    <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
+        <!-- Submenu Dashboards -->
+        <ul class="childNav" data-parent="dashboard">
+</ul>
+<ul class="childNav" data-parent="data-master">
+    <li class="nav-item">
+        <a href="" class="" >
+            <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+            <span class="item-name">Kelas</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="" >
+            <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+            <span class="item-name">Berita</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="" >
+            <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+            <span class="item-name">Mapel</span>
+        </a>
+    </li>
+    
+</ul>
+<ul class="childNav" data-parent="widgets">
+    <li class="nav-item">
+        <a class="" href="widgets/card.html">
+            <i class="nav-icon i-Receipt-4"></i>
+            <span class="item-name">Laporan Siswa</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class=""
+        href="widgets/statistics.html">
+        <i class="nav-icon i-Receipt-4"></i>
+        <span class="item-name">Laporan Absensi Siswa</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class=""
+    href="widgets/statistics.html">
+    <i class="nav-icon i-Receipt-4"></i>
+    <span class="item-name">Laporan Absensi Guru</span>
+</a>
+</li>
+<li class="nav-item">
+    <a class=""
+    href="widgets/statistics.html">
+    <i class="nav-icon i-Receipt-4"></i>
+    <span class="item-name">Laporan Nilai</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="sidebar-overlay"></div>
+</div>
