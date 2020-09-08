@@ -1,5 +1,5 @@
-<footer class="page-footer nav-bottom hidden" style="position: fixed; bottom:0; width:100%;">
-    <div class="row no-mg" style="margin-bottom:0px;">
+<footer class="page-footer nav-bottom hidden" style="position: fixed; bottom:0; width:100%; background-color:white;">
+    <div class="row no-mg" style="margin-bottom:0px;  color:#04b3fc;">
       <div class="col s12 no-pd">
         <ul class="tabs tabs-fixed-width transparent green-text tabs-icon" style="padding-left:0px!important;padding-right:0px!important;">
           <li class="tab col s3">

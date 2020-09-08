@@ -63,7 +63,7 @@ class LoginController extends Controller
                     break;
                 }
             }
-            return redirect('/');
+            return redirect('/orangtua');
         } else {
             $notification = array(
                 'message' => 'Akun Anda Belom Di Aktifkan',
