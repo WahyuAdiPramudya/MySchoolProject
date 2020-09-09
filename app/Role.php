@@ -12,10 +12,10 @@ class Role extends Model
 
 	protected $primaryKey = 'id_role';
 
-	public $timestamps = false ;
+	public $timestamps = false;
 
 	public function users()
 	{
-		return $this->hasMany('App/User');
+		return $this->hasMany('App\User','id_role','id_role');
 	}
 }

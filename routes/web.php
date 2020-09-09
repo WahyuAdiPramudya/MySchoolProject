@@ -35,7 +35,14 @@ Route::get('staff','Staff\DashboardController@index');
 //  -- ROUTE GURU -- 
 Route::group(['as' => 'guru','middleware' => 'auth','guru'], function(){
 
-Route::get('guru','Guru\DashboardController@index');
+	Route::get('guru','Guru\DashboardController@index')->name('dashboard');
+	Route::get('/getKelasAbsen','Guru\GuruController@getKelasAbsen')->name('getKelasAbsen');
+	Route::get('/getSiswaAbsen/{id}','Guru\GuruController@getSiswaAbsen')->name('getSiswaAbsen');
+	Route::post('/postNilai','Guru\GuruController@postNilai')->name('postNilai');
+	Route::get('/getKelasNilai','Guru\GuruController@getKelasNilai')->name('getKelasNilai');
+	Route::get('/getSiswaNilai/{id}','Guru\GuruController@getSiswaNilai')->name('getSiswaNilai');
+	Route::get('/carikelas','Guru\GuruController@cariKelas')->name('search');
+	Route::post('/postabsen','Guru\GuruController@absensi')->name('absensi');
  
 });
 
