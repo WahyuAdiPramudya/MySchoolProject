@@ -15,6 +15,13 @@ class Sekolah extends Model
     public $timestamps = false ;
 
     public function user(){
-    	return $this->hasMany('App\User','id');  
+    	return $this->hasMany('App\User','id_sekolah','id');  
+    }
+
+    public function kelas(){
+    	return $this->hasMany('App\kelas');
+    }
+     public function mapel(){
+        return $this->hasMany('App\Mapel','sekolah_id','id_mapel');
     }
 }

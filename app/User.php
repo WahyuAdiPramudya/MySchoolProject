@@ -14,8 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    
     protected $fillable = [
-        'nama_lengkap', 'email', 'no_telp','password','status','role_id','id_sekolah','nisn_siswa',
+        'id','nama_lengkap', 'email', 'no_telp','password','status','role_id','id_sekolah','nisn_siswa',
     ];
 
     /**
@@ -27,11 +29,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public $timestamps = false;
+
     public function sekolah(){
         return $this->belongsTo('App\Sekolah','id_sekolah','id_sekolah');
     }
 
     public function role(){
-        return $this->belongsTo('App\Role','id_role','id_role');
+        return $this->belongsTo('App\Role','role_id','id_role');
+    }
+
+    public function mapel(){
+        return $this->hasMany('App\Mapel');
+    }
+
+    public function siswa(){
+        return $this->hasMany('App\Siswa','id','nisn');
     }
 }

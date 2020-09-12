@@ -70,9 +70,7 @@
                                 </span>
                                 @endif
                             </div>
-                            <div class="form-group">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
-                            </div>
+                
                             <input type="hidden" name="status" value="disable">
                             <input type="hidden" name="role_id" value="4">
                             <div class="form-group{{ $errors->has('id_sekolah') ? 'has-error' : ''}}">
@@ -106,7 +104,7 @@
                             </div>
                         </form>
                         <div class="form-group">  
-                            <a class="btn btn-link" href="{{ route('login') }}">Back To Login</a>
+                            <a class="btn btn-link" href="/login">Back To Login</a>
                         </div>  
                     </div>
                 </div>
