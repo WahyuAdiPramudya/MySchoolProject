@@ -2,11 +2,6 @@
 
 @section('title','Dashboard')
 @section('content')
-
-@push('css')
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-@endpush
-
 <div class="col s12 ">
               <div class="row" style="">
               <div class="col s1">
@@ -57,9 +52,4 @@
                           </div>
                       </div>
                   </div>
-
-@push('js')
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-@endpush
-        
 @endsection

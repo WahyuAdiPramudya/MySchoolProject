@@ -3,7 +3,6 @@
 @section('title','Dashboard')
 
 @section('content')
-
 <form>
 
 <div class="col s12">
@@ -23,12 +22,12 @@
 <div class="cols 12" style="margin-top: 50px;">
 <div class="row">
   <div class="col s12">
-@foreach($kelas as $kelas)
+@foreach($data as $kelas)
         <div class="row" style="text-align:center; ">
             <div class="col s3 icon">
                 <div class="card" style=" margin-top:5px; border-radius: 5px;">
                     <div style="padding:25%; margin:8px;   ">
-                    	<a href="/getSiswaNilai/{{$kelas->id_kelas}}">
+                    	<a href="/guru/DataNilaiSiswa/{{$kelas->id_kelas}}">
                     		 <small>{{$kelas->nama_kelas}}</small>
                     	</a>
                     	
@@ -42,3 +41,4 @@
 </div>
 </div>
 @endsection
+

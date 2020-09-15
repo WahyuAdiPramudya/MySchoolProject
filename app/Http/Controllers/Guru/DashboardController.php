@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Guru;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Auth;
+use App\Sekolah;
 class DashboardController extends Controller
 {
 
     public function index()
     {
-        return view("guru.index");
+        $user = Auth::user()->id_sekolah;
+        $sekolah = Sekolah::where('id_sekolah', $user)->get();
+        foreach ($sekolah as $s) {
+            return view("guru.index", compact('s'));
+        }
+       
     }
 
     /**

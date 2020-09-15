@@ -29,6 +29,11 @@ Route::group(['as' => 'orangtua','middleware' => 'auth','orangtua'], function(){
     Route::get('orangtua','Orangtua\DashboardController@index');
     Route::get('/orangtua/murid', 'Orangtua\DashboardController@profile');
     Route::get('/orangtua/datanilai','Orangtua\NilaiController@index');
+    Route::get('/orangtua/listprofile','Orangtua\DashboardController@listprofile');
+    Route::get('orangtua/profileorangtua','Orantua\DashboardController@profileorangtua');
+    Route::get('orangtua/profilesiswa','Orangtua\DashboardController@profilesiswa');
+
+    });
     Route::get('/orangtua/izin',function(){
         return view('orangtua.izin');
     });
@@ -55,12 +60,20 @@ Route::group(['as' => 'guru','middleware' => 'auth','guru'], function(){
 
 	Route::get('guru','Guru\DashboardController@index')->name('dashboard');
 	Route::get('/getKelasAbsen','Guru\GuruController@getKelasAbsen')->name('getKelasAbsen');
+    Route::get('/guru/listberita','Guru\GuruController@listberita');
+    Route::get('/guru/berita/{id}','Guru\GuruController@berita');
 	Route::get('/getSiswaAbsen/{id}','Guru\GuruController@getSiswaAbsen')->name('getSiswaAbsen');
 	Route::post('/postNilai','Guru\GuruController@postNilai')->name('postNilai');
 	Route::get('/getKelasNilai','Guru\GuruController@getKelasNilai')->name('getKelasNilai');
 	Route::get('/getSiswaNilai/{id}','Guru\GuruController@getSiswaNilai')->name('getSiswaNilai');
 	Route::get('/carikelas','Guru\GuruController@cariKelas')->name('search');
 	Route::post('/postabsen','Guru\GuruController@absensi')->name('absensi');
+    Route::get('/guru/DataNilaiSiswa/{id}','Guru\GuruController@DataNilaiSiswa');
+    Route::get('/guru/Listnilaiperkelas','Guru\GuruController@ListNilaiPerkelas');
+    Route::get('/guru/Listabsenperkelas','Guru\GuruController@ListAbsenPerkelas');
+    Route::get('/guru/getDataSiswaAbsen/{id}','Guru\GuruController@getDataSiswaAbsen')->name('dataAbsen');
+
+
  
 });
 

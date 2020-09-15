@@ -114,7 +114,7 @@
     <div class="col s3 icon">
             <div class="card" style=" margin-top:5px;">
             <div style="padding:25%; margin:8px;">
-            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/non.png')}}" alt="" class="responsive-img gambar"></a>
+            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/komunitas.png')}}" alt="" class="responsive-img gambar"></a>
            </div>
         <small>Komunitas</small>
     </div>
@@ -122,7 +122,7 @@
     <div class="col s3 icon">
             <div class="card" style=" margin-top:5px;">
             <div style="padding:25%; margin:8px;">
-            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/non.png')}}" alt="" class="responsive-img gambar"></a>
+            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/toko.png')}}" alt="" class="responsive-img gambar"></a>
            </div>
         <small>Toko</small>
     </div>

@@ -6,14 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nilai extends Model
 {
-<<<<<<< HEAD
-    public $table = "tb_nilai";
-    
-    protected $primaryKey = "id_nilai";
-=======
-    protected $table = 'nilai';
+    protected $table = 'tb_nilai';
 
-	protected $fillable = ['id_nilai','id_siswa','id_mapel','nama_tugas','nilai','id_user','id_sekolah'];
+	protected $fillable = ['id_nilai','id_siswa','id_mapel','nama_tugas','nilai','id_user','id_sekolah','id_kelas'];
 
 	protected $primaryKey = 'id_nilai';
 
@@ -25,11 +20,10 @@ class Nilai extends Model
 	}
 
 	public function getSiswa(){
-		return $this->belongsToMany('App\Siswa','id_siswa','id_siswa');
+		return $this->belongsTo('App\Siswa','id_siswa','id_siswa');
 	}
 
 	public function getUser(){
 		return $this->belongsTo('App\User','id_user','id_user');
 	}
->>>>>>> develop
 }

@@ -13,4 +13,8 @@ class Siswa extends Model
     protected $primaryKey = 'id_siswa';
 
     public $timestamps = false;
+
+    public function getNilai(){
+		return $this->hasMany('App\Nilai','id_siswa','id_siswa');
+	}
 }

@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-<<<<<<< HEAD
-    
-=======
     protected $table = 'tb_kelas';
 
 	protected $fillable = ['id_kelas','nama_kelas','id_sekolah'];
@@ -25,5 +22,4 @@ class Kelas extends Model
 	public function Siswa(){
 		return $this->belongsTo('App\Siswa','id_kelas','id_kelas');
 	}
->>>>>>> develop
 }

@@ -8,12 +8,14 @@
   <link href="{{asset('assets/frontend/css/footer.css')}}" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
+      font-family: Comic Sans Pro FlipFont;
       display: flex;
       min-height: 100vh;
       flex-direction: column;
@@ -51,6 +53,7 @@
 
     .page-footer {
       background-color: #fff;
+      color: #04b3fc;
     }
 
     #frow {
@@ -75,8 +78,8 @@
 
     }
     .image{
-      max-height:20vh !important;
-      max-width: 20vh !important;
+      max-height:30vh !important;
+      max-width: 30vh !important;
     }
     .label  {
       font-size:11px;
@@ -135,9 +138,14 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="{{ URL::to('/') }}offline_material/materalize.min.js"></script>
   <script>
+        var d = new Date();
+    document.getElementById("demo").innerHTML = d;
+  </script>
+  <script>
     $(document).ready(function(){
    $('.slider').slider();  
    $('.datepicker').datepicker();
+    $('select').formSelect();
     $('.dropdown-trigger').dropdown(); 
     $('.carousel.carousel-slider').carousel({
     fullWidth: true

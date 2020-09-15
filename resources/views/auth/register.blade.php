@@ -7,6 +7,9 @@
       flex-direction: column;
       background-image: url('{{ asset('assets/frontend/image/bg2.png') }}');
   }
+  .rules{
+    margin-top: 50%;
+  }
 
   .image {
     width: 350px;
@@ -28,7 +31,7 @@
 
 </style>
 <title>Register</title>
-<center>    
+<center class="rules">    
     <img src="{{asset ('assets/frontend/image/COOLMYSH 2.png')}}" class="image">
     <section id="cover" class="min-vh-100">
         <div id="cover-caption">

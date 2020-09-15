@@ -35,13 +35,18 @@ class DashboardController extends Controller
        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+   public function listprofile()
+       {
+        $data =Siswa::all();
+        $user = Auth::user()->id;
+            foreach ($data as $a ) {
+            if ($a->user_id == $user) {
+            return view('orangtua.listprofile', compact('a'));
+            }
+
+       }
+   }
+    public function profilesiswa()
     {
         //
     }

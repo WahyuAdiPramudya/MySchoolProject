@@ -5,14 +5,18 @@ namespace App\Http\Controllers\Orangtua;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Nilai;
+use App\Siswa;
 use Auth;
 class NilaiController extends Controller
 {
     public function index()
-    {
-        $user = Auth::user()->id;   
-        $data = Nilai::where('user_id', $user)->get();
-        return view('orangtua.datanilai', compact('data'));
+    {  
+        $user = Auth::user()->id;
+        $siswa = Siswa::where('user_id', $user)->get();
+            foreach ($siswa as $row) {
+                $data = Nilai::where('id_siswa', $row->id_siswa)->get();
+                return view('orangtua.datanilai', compact('data'));
+            }
     }
 
     public function create()

@@ -2,7 +2,35 @@
 
 @section('title','Dashboard')
 @section('content')
-Informasi
+ <div class="col s12">
+    <div class="row" style="margin-top:8px;">
+        <div class="col s1">
+        </div>
+            <div class=" col s10" style="
+                background-color:white;
+                height:40%;
+                padding:20px;
+                border-radius:10px;
+                margin-top: -50px;
+                text-align:center;
+                 box-shadow:10px 10px 5px grey;">
+                
+                <div class="row">
+                     <div class="col s3">
+                         <img src="/assets/logosekolah/SMPUtama.png" class="responsive-img gambar">
+                     </div>
+                     <div class="col s9">
+                      {{ strtoupper($s->nama_sekolah)}}
+                    </div>
+                    
+                </div>
+            </div>
+        <div class="col s1">
+        </div>
+    </div>
+</div>
+
+<h5>Pengingat</h5>
 <div class="col s12">
     <div class="row">
         <div class="carousel carousel-slider" style="height: 220px; border-radius:20px;">
@@ -34,75 +62,76 @@ Informasi
         </div>
     </div>
 </div>
-menu
-<div class="col s12">
-    <div class="row" style="text-align:center; ">
-        <div class="col s3">
-            <div class="card" style=" margin-top:5px;">
-                <div style="padding:25%; margin:8px;   ">
-                    <a href="{{route('gurugetKelasAbsen')}}"><img src="{{asset('assets/frontend/image/absen.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Absen</small>
+<h5>Menu</h5>
+ <div class="col s12">
+        <div class="row" style="text-align:center; ">
+            <div class="col s3 icon">
+                <div class="card" style=" margin-top:5px;">
+                    <div style="padding:25%; margin:8px;   ">
+                    <a href="/getKelasAbsen"><img src="{{asset('assets/frontend/image/absen.png')}}" alt="" class="responsive-img gambar"></a>
+                    </div>
+                    <small>Absen</small>
+                 </div>
             </div>
-        </div>
-        <div class="col s3">
-            <div class="card" style=" margin-top:5px;">
-                <div style="padding:25%; margin:8px;">
-                    <a href="{{route('gurugetKelasNilai')}}"><img src="{{asset('assets/frontend/image/tugas.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Nilai Tugas</small>
-            </div>
-        </div>
-        <div class="col s3">
-            <div class="card" style="margin-top:5px;">
-                <div style="padding:25%; margin:8px;   ">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/sakit.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Sakit</small>
-            </div>
-        </div>
-        <div class="col s3">
-            <div class="card" style="margin-top:5px;">
-                <div style="padding:25%; margin:8px;">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/info.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Info</small>
-            </div>
-            <pre></pre>
-        </div>
-        <div class="col s3">
-            <div class="card" style="margin-top:5px;">
-                <div style="padding:25%; margin:8px;">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/tugas.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Nilai Tugas</small>
-            </div>
-        </div>
-        <div class="col s3">
+        <div class="col s3 icon">
             <div class="card" style=" margin-top:5px;">
                 <div style="padding:25%; margin:8px;">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/non.png')}}" alt="" class="responsive-img gambar"></a>
+                <a href="/getKelasNilai"><img src="{{asset('assets/frontend/image/tugas.png')}}" alt="" class="responsive-img gambar"></a>
                 </div>
-                <small>Komunitas</small>
+          <small>Nilai Tugas</small>
             </div>
         </div>
-        <div class="col s3">
-            <div class="card" style=" margin-top:5px;">
-                <div style="padding:25%; margin:8px;">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/non.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Toko</small>
+      <div class="col s3 icon">
+              <div class="card" style="margin-top:5px;">
+              <div style="padding:25%; margin:8px;   ">
+              <a href="/#"><img src="{{asset('assets/frontend/image/jadwal.png')}}" alt="" class="responsive-img gambar"></a>
             </div>
-        </div>
-        <div class="col s3">
-            <div class="card" style=" margin-top:5px;">
-                <div style="padding:25%; margin:8px;">
-                    <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/tagihan.png')}}" alt="" class="responsive-img gambar"></a>
-                </div>
-                <small>Tagihan</small>
-            </div>
-        </div>
+         <small>Jadwal</small>
     </div>
+</div>
+    <div class="col s3 icon">
+            <div class="card" style="margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="/guru/Listnilaiperkelas"><img src="{{asset('assets/frontend/image/data nilai.png')}}" alt="" class="responsive-img gambar"></a>
+        </div>
+      <small>Data Nilai</small>
+   </div>
+   <pre></pre>
+</div>
+    <div class="col s3 icon">
+            <div class="card" style="margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="/guru/Listabsenperkelas"><img src="{{asset('assets/frontend/image/absen.png')}}" alt="" class="responsive-img gambar"></a>
+         </div>
+       <small>Data Absen</small>
+    </div>
+</div>
+    <div class="col s3 icon">
+            <div class="card" style=" margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/data siswa.png')}}" alt="" class="responsive-img gambar"></a>
+           </div>
+        <small>Data Siswa</small>
+    </div>
+</div>
+    <div class="col s3 icon">
+            <div class="card" style=" margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="guru/listberita"><img src="{{asset('assets/frontend/image/info.png')}}" alt="" class="responsive-img gambar"></a>
+           </div>
+        <small>info</small>
+    </div>
+</div>
+    <div class="col s3 icon">
+            <div class="card" style=" margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/komunitas.png')}}" alt="" class="responsive-img gambar"></a>
+           </div>
+        <small>komunitas</small>
+            </div>
+    </div>
+</div>
+</div>
 </div>
 
 &emsp;
