@@ -1,5 +1,5 @@
 
-<nav style="height:200px; padding-top:70px;">
+<nav style="height:200px; padding-top:70px; background-color: #04b3fc;">
   <div class="nav-wrapper"  >
 
     @if(Auth::user()->role_id == 3 || Auth::user()->role_id == 2 || Auth::user()->role_id == 1)

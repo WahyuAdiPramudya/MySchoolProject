@@ -3,7 +3,10 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-
+use App\Http\Middleware\StaffMiddleware;
+use App\Http\Middleware\SuperAdminMiddleware;
+use App\Http\Middleware\Orangtua_middleware;
+use App\Http\Middleware\GuruMiddleware;
 class Kernel extends HttpKernel
 {
     /**
@@ -57,5 +60,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'superadmin' => SuperAdminMiddleware::class,
+        'staff' => StaffMiddleware::class,
+        'guru' => GuruMiddleware::class,
+        'orangtua' => Orangtua_middleware::class,
     ];
 }

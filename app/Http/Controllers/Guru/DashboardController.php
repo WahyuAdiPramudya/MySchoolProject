@@ -16,7 +16,7 @@ class DashboardController extends Controller
         foreach ($sekolah as $s) {
             return view("guru.index", compact('s'));
         }
-       
+
     }
 
     /**

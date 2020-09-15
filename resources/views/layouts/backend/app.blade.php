@@ -14,7 +14,8 @@
 
     <link id="gull-theme" rel="stylesheet" href="{{ asset('assets/backend/assets/styles/css/themes/lite-purple.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/backend/assets/styles/vendor/perfect-scrollbar.css')}}">
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    @stack('css')
 </head>
 
 
@@ -26,37 +27,43 @@
       <div class="loader-bubble loader-bubble-primary "></div>
 
 
-        </div>
-    </div>
-    <!-- Pre Loader end  -->
+  </div>
+  <!-- Pre Loader end  -->
 
-    @include('layouts.backend.partial.topbar')
-    <!-- header top menu end -->
+  @include('layouts.backend.partial.topbar')
+  <!-- header top menu end -->
 
-    @include('layouts.backend.partial.sidebar') 
-    <!--=============== Left side End ================-->            
+  @include('layouts.backend.partial.sidebar') 
+  <!--=============== Left side End ================-->            
 
-    <!-- ============ Body content start ============= -->
-    <div class="main-content-wrap sidenav-open d-flex flex-column">
-        <div class="main-content">
-          
-        @yield('content')
+  <!-- ============ Body content start ============= -->
 
-    </div>
-
-
-</div>
-
-</div>
-</div>
-</div>
-<script src="{{ asset('assets/backend/assets/js/common-bundle-script.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/vendor/echarts.min.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/es5/echart.options.min.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/es5/dashboard.v1.script.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/script.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/sidebar.large.script.js')}}"></script>
-<script src="{{ asset('assets/backend/assets/js/customizer.script.js')}}"></script>
-
+  @yield('content')
+  
+  <script src="{{ asset('assets/backend/assets/js/common-bundle-script.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/vendor/echarts.min.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/es5/echart.options.min.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/es5/dashboard.v1.script.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/script.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/sidebar.large.script.js')}}"></script>
+  <script src="{{ asset('assets/backend/assets/js/customizer.script.js')}}"></script>
+  
+  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
+  <script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.error('{{ $error }}','Error',{
+        closebutton:true,
+        progressBar:true,
+    });
+    @endforeach
+    @endif
+</script>
+@stack('js')
 </body>
 </html>

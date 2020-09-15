@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Input;
 use App\User;
 use Auth;
 use Session;
+use UxWeb\SweetAlert\SweetAlert;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 class LoginController extends Controller
 {
    public function login()
@@ -15,7 +17,10 @@ class LoginController extends Controller
     return view('auth.login');
     }
 
+
     public function multilogin(){
+      
+
     if (Auth::attempt(['no_telp' => input::get('no_telp'), 'password' => input::get('password')])) {
         if (Auth::user()->role_id == 1 and Auth::user()->status == "enable") {
             $user = User::all();
@@ -27,8 +32,8 @@ class LoginController extends Controller
                     break;
                 }
             }
-
-            return redirect('/SuperAdmin/dashboard');
+             Alert()->success('success','Success');
+            return redirect()->route('SuperAdmin.dashboard');
         } elseif (Auth::user()->role_id == 2 and Auth::user()->status == "enable") {
 
             $user = User::all();
@@ -40,8 +45,8 @@ class LoginController extends Controller
                     break;
                 }
             }
-
-            return redirect('/staff');
+             Alert()->success('success','Success');
+            return redirect('staff/dashboard');
         } elseif (Auth::user()->role_id == 3 and Auth::user()->status == "enable") {
             $user = User::all();
             foreach ($user as $us) {
@@ -52,7 +57,8 @@ class LoginController extends Controller
                     break;
                 }
             }
-            return redirect('/guru');
+             Alert()->success('success','Success');
+            return redirect()->redirect('guru/dashboard');
         } elseif (Auth::user()->role_id == 4 and Auth::user()->status == "enable") {
             $user = User::all();
             foreach ($user as $us) {
@@ -63,28 +69,23 @@ class LoginController extends Controller
                     break;
                 }
             }
+             Alert()->success('success','Success');
             return redirect('/orangtua');
         } else {
-            $notification = array(
-                'message' => 'Akun Anda Belom Di Aktifkan',
-                'alert-type' => 'info'
-            );
+            $notification = Toastr::info('message ','akun belum di aktifkan','Info');   
         }
     } else {
-        $notification = array(
-            'message' => 'Username/Password Salah!',
-            'alert-type' => 'error'
-        );
+        $notification = Toastr::error('message','No Telpon salah / Password Salah');
     }
     return back()->with($notification);
 }
-
+    
 public function logout()
 {
     session()->forget('no_telp');
     session()->forget('id_sekolah');
     session()->flush();
     Auth::logout();
-    return redirect('/login');
+    return redirect('/');
 }
 }

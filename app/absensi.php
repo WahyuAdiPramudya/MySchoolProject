@@ -8,13 +8,19 @@ class Absensi extends Model
 {
     protected $table = 'tb_absensi';
 
-    protected $fillable = ['id_absen','id_siswa','id_kelas','status','id_user','id_sekolah'];
-
     protected $primaryKey = 'id_absen';
+
+    protected $fillable = [
+    				'nisn',
+    				'kelas_id',
+    				'user_id',
+    				'status',
+    				'masuk',
+    				'sekolah_id'
+    ];
 
     public $timestamps = false;
 
-    // RELATION TABLE
     public function getKelas(){
     	return $this->hasOne('App\Kelas','id_kelas','id_kelas');
     }

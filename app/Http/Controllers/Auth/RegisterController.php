@@ -15,8 +15,15 @@ class RegisterController extends Controller
         $sekolah = Sekolah::all();
         return view('auth.register',compact('sekolah'));
     }
-    public function register()
+    public function register(Request $request)
     {
+        $this->validate($request,[
+            'nama_lengkap' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required|unique:users',
+            'password' => 'required',
+        ]);
+
         $data = array(
             'nama_lengkap' => input::get('nama_lengkap'),
             'email'        => input::get('email'),

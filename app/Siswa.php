@@ -6,15 +6,38 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-     protected $table = 'tb_siswa';
+ 
+    protected $table = 'tb_siswa';
 
-    protected $fillable = ['id_siswa','nisn','nama','jenkel','agama','id_kelas','alamat','nama_ayah','nama_ibu','sekolah_id','user_id'];
+    protected $primaryKey ='nisn';
 
-    protected $primaryKey = 'id_siswa';
+    protected $fillable = [
+                        'nisn',
+    					'nama',
+    					'jenkel',
+    					'agama',
+    					'kelas_id',
+    					'nama_ayah',
+    					'nama_ibu',
+    					'tanggal_lahir',
+    					'alamat',
+    					'image_siswa',
+    				];
+
+    protected $dates = ['tanggal_lahir'];                
 
     public $timestamps = false;
+
 
     public function getNilai(){
 		return $this->hasMany('App\Nilai','id_siswa','id_siswa');
 	}
+    
+    public function user(){
+    	return $this->belongsTo('App\User');
+    }	
+
+    public function kelas(){
+        return $this->belongsTo('App\Kelas','kelas_id','id');
+    }			
 }
