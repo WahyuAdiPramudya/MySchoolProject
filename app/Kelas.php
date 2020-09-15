@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
+
     protected $table = 'tb_kelas';
 
     protected $primaryKey = 'id';
@@ -21,4 +22,10 @@ class Kelas extends Model
     public function siswa(){
     	return $this->hasMany('App\Kelas','id');
     }
+    
+	// RELATION TABLE
+	public function Absen(){
+		return $this->belongsTo('App\Absensi','id_kelas','id_kelas');
+	}
+
 }

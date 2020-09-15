@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class absensi extends Model
+class Absensi extends Model
 {
     protected $table = 'tb_absensi';
 
@@ -21,4 +21,20 @@ class absensi extends Model
 
     public $timestamps = false;
 
+    public function getKelas(){
+    	return $this->hasOne('App\Kelas','id_kelas','id_kelas');
+    }
+
+    public function getSiswa(){
+    	return $this->hasOne('App\Siswa','id_siswa','id_siswa');
+    }
+
+    public function getGuru(){
+    	return $this->hasOne('App\Guru');
+    }
+
+    public function getSekolah(){
+    	return $this->hasOne('App\Sekolah');
+    }
+>>>>>>> cbc47342123d1b0338dbc7f98d0cd4971d79598c
 }

@@ -70,7 +70,7 @@ class LoginController extends Controller
                 }
             }
              Alert()->success('success','Success');
-            return redirect();
+            return redirect('/orangtua');
         } else {
             $notification = Toastr::info('message ','akun belum di aktifkan','Info');   
         }

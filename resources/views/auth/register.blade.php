@@ -104,7 +104,9 @@
                             </div>
                         </form>
                         <div class="form-group">  
+
                             <a class="btn btn-link" href="/login">Back To Login</a>
+                            <a class="btn btn-link" href="{{ route('loginlogin') }}">Back To Login</a>
                         </div>  
                     </div>
                 </div>

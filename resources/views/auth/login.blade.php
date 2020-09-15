@@ -42,7 +42,7 @@
                         <form action="/postlogin" class="justify-content-center" method="post"> 
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('no_telp') ? ' has-error' : '' }}">
-                                <input type="number" class="form-control" name="no_telp" value="{{ old('no_telp') }}"  placeholder="Masukan No Telp">
+                                <input type="number" class="form-control"  style="font-family: FontAwesome;"  name="no_telp" value="{{ old('no_telp') }}"  placeholder="&#xf10b Telp">
                                 @if ($errors->has('no_telp'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('no_telp') }}</strong>
@@ -50,8 +50,7 @@
                                 @endif
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="sr-only">Password</label>
-                                <input type="password" class="form-control" name="password" placeholder="Masukan Password">
+                                <input style="font-family: FontAwesome;" type="password" name="password" class="form-control" placeholder='&#xf023  Password'/>
                                 @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>

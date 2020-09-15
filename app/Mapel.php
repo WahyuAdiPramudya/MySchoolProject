@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mapel extends Model
 {
+
     protected $table = 'tb_map';
 
     protected $primaryKey = 'id';
@@ -21,4 +22,10 @@ class Mapel extends Model
     public function sekolah(){
     	return $this->hasMany('App\	Sekolah','id_sekolah');
     }
+
+	// RELATION TABLE
+	public function Nilai(){
+		return $this->belongsToMany('App\Nilai','id_mapel','id_mapel');
+	}
+
 }
