@@ -26,7 +26,7 @@
     <div class="col s12 ">
       <div class="card">
         <div class="card-image">
-          <img src="/assets/image/{{$berita->image}}" class="responsive-img">
+          <img src="/images/{{$berita->image}}" class="responsive-img">
         </div>
         <div class="card-content">
           <h4>{{$berita->judul}}</h4>

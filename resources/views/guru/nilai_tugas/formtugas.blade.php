@@ -23,7 +23,7 @@
 <div class="row" style="padding:10px;">
 	<div class=" card col s12" style=" padding:30px;">
 		<div class="row">
-			<form action="{{route('gurupostNilai')}}" method="POST">
+			<form action="/guru/postNilai" method="POST">
 			{{ csrf_field() }}
 
 			@foreach($siswa as $siswa)

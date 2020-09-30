@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\Sekolah;
+use App\Update;
 class DashboardController extends Controller
 {
 
@@ -13,8 +14,9 @@ class DashboardController extends Controller
     {
         $user = Auth::user()->id_sekolah;
         $sekolah = Sekolah::where('id_sekolah', $user)->get();
+        $slider = Update::all();
         foreach ($sekolah as $s) {
-            return view("guru.index", compact('s'));
+            return view("guru.dashboard", compact('s','slider'));
         }
 
     }

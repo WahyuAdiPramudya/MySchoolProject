@@ -36,12 +36,12 @@
  <div class="row">
     <div class="col s12 ">
       <div class="card">
-        <div class="card-image">
-          <img src="/assets/image/{{$data->image}}" class="responsive-img">
+        <div class="card-image" style="padding: 10px;">
+          <img src="/images/{{$row->image}}" class="responsive-img">
         </div>
         <div class="card-content">
-          <h4>{{$data->judul}}</h4>
-          <p>{{$data->desc}}</p>
+          <h4>{{$row->title}}</h4>
+          <p>{{$row->description}}</p>
         </div>
       </div>
     </div>

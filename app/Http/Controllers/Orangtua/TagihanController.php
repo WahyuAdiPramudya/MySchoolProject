@@ -4,25 +4,18 @@ namespace App\Http\Controllers\Orangtua;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Tagihan;
 use App\Siswa;
 use Auth;
-
-class ProfileController extends Controller
+class TagihanController extends Controller
 {
     public function index()
     {
-        $user = Auth::user()->id;
-
-        $data = Siswa::all();
-
-        foreach ($data as $a) {
-            if ($a->user_id == $user) {
-                dd($a->nama);
-            }
-        }
-
-        
+        $siswa = Siswa::where('no_telp_wali', Auth::user()->no_telp)->get();
+        $data = Tagihan::all();
+        return view('orangtua.tagihan.index', compact('siswa','data'));
     }
+
     public function create()
     {
         //

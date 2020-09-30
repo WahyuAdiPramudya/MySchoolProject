@@ -33,8 +33,8 @@
                         <p>{{Auth::user()->email}}</p>
                       </li>
                       <li>
-                        <h5>Email</h5>
-                        <p>{{Auth::user()->email}}</p>
+                        <h5>Nama Siswa</h5>
+                        <p>{{$a->nama}}</p>
                       </li>
                     </ul>
                   

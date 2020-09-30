@@ -22,7 +22,7 @@
 	<label style="font-size: 20px;  color:black;"> {{ date('l, d F Y') }}</label>
 	<div class=" card col s12" style=" padding:30px; border-radius: 10px;">
 		<div class="row">
-	<form action="{{route('guruabsensi')}}" method="POST">
+	<form action="/guru/postAbsen" method="POST">
 		{{ csrf_field() }}
 		@foreach($siswa as $siswa)
 		<div class="row" id="{{$siswa->id_siswa}}">
@@ -38,22 +38,16 @@
         				<input type="checkbox" id="{{$siswa->id_siswa}}" value="hadir" name="status[]"/>
        					<span>Hadir</span>
       				</label>
-    			</p>
-    			<p>
      				<label>
         				<input type="checkbox" id="{{$siswa->id_siswa}}" value="sakit" name="status[]"/>
        					<span>Sakit</span>
       				</label>
-    			</p>
-    			<p>
      				<label>
         				<input type="checkbox" id="{{$siswa->id_siswa}}" value="izin" name="status[]"/>
-       					<span>Izin</span>
+       					<span>Izin&nbsp;&nbsp;&nbsp;</span>
       				</label>
-      			</p>
-      			<p>
      				<label>
-        				<input type="checkbox" id="{{$siswa->id_siswa}}" value="alpa" name="status[]"/>
+        				<input type="checkbox" id="{{$siswa->id_siswa}}" value="alfa" name="status[]"/>
        					<span>Alpa</span>
       				</label>
     			</p>

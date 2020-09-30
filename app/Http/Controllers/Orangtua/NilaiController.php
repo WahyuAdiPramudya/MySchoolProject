@@ -11,11 +11,11 @@ class NilaiController extends Controller
 {
     public function index()
     {  
-        $user = Auth::user()->id;
-        $siswa = Siswa::where('user_id', $user)->get();
+        $user = Auth::user()->no_telp;
+        $siswa = Siswa::where('no_telp_wali', $user)->get();
             foreach ($siswa as $row) {
                 $data = Nilai::where('id_siswa', $row->id_siswa)->get();
-                return view('orangtua.datanilai', compact('data'));
+                return view('orangtua.nilai.datanilai', compact('data'));
             }
     }
 

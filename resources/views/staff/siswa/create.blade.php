@@ -68,17 +68,22 @@
 
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="nama" class="ul-form__label">Tanggal Lahir:</label>
-                            <input type="date" autocomplete="off" id="tanggal_lahir" required="" class="form-control" name="tanggal_lahir" placeholder="Masukan Tanggal Lahir">
+                            <label for="no_telp_wali" class="ul-form__label">No Telp Wali:</label>
+                            <input type="number" autocomplete="off" required="" name="no_telp_wali" class="form-control" id="no_telp_wali" placeholder="Masukan Ibu">
 
                         </div>
                     </div>
                     <div class="form-row">
+                    <div class="form-group col-md-6">
+                            <label for="nama" class="ul-form__label">Tanggal Lahir:</label>
+                            <input type="date" autocomplete="off" id="tanggal_lahir" required="" class="form-control" name="tanggal_lahir" placeholder="Masukan Tanggal Lahir">
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="alamat" class="ul-form__label">alamat:</label>
                             <input type="text" autocomplete="off" required="" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat Siswa">
-
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="image_siswa" class="ul-form__label">Foto Siswa:</label>
                             <input type="file" autocomplete="off" id="image_siswa" required="" class="form-control" name="image_siswa" placeholder="Masukan Deskripsi">

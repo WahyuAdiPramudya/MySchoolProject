@@ -27,7 +27,7 @@
             <div class="col s3 icon">
                 <div class="card" style=" margin-top:5px; border-radius: 5px;">
                     <div style="padding:25%; margin:8px;   ">
-                    	<a href="{{route('gurugetSiswaAbsen',$kelas->id_kelas)}}">
+                    	<a href="/getSiswaAbsen/{{$kelas->id_kelas}}">
                     		 <small>{{$kelas->nama_kelas}}</small>
                     	</a>
                     	

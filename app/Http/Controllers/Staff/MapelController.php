@@ -118,7 +118,7 @@ class MapelController extends Controller
     }
 
     public function datatable(){
-        $data = DB::table('tb_map as a')
+        $data = DB::table('tb_mapel as a')
         ->join('users as b','b.id','=','a.user_id')
         ->select('a.*','b.nama_lengkap as nama')
         ->get();

@@ -36,27 +36,16 @@
         <div class="carousel carousel-slider" style="height: 220px; border-radius:20px;">
             <div class="slider fullscreen">
                 <ul class="slides">
-                    <li>
-                        <img src="{{asset('image/rtrw.jpg')}}"> <!-- random image -->
+                     @foreach($slider as $slide)
+                        <li>
+                        <img src="images/{{$slide->image}}"> <!-- random image -->
                         <div class="caption center-align">
-                            <h3>Selamat Datang </h3>
-                            <h5 class="light grey-text text-lighten-5">Di RTRWTERPADU.NET</h5>
+                            <h3>{{$slide->title}}</h3>
+                            <h5 class="light grey-text text-lighten-5">{{$slide->description}}</h5>
                         </div>
-                    </li>
-                    <li>
-                        <img src="{{asset('image/iuran.jpg')}}"> <!-- random image -->
-                        <div class="caption left-align">
-                            <h3>Iuran Warga</h3>
-                            <h5 class="light grey-text text-lighten-3">Jadi Lebih Mudah</h5>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="{{asset('image/tong-tong.jpg')}}"> <!-- random image -->
-                        <div class="caption right-align">
-                            <h3>Klik Tong Tong</h3>
-                            <h5 class="light grey-text text-lighten-3">Mengintegrasi Seluruh Warga</h5>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
+                    </ul>
                 </ul>
             </div>
         </div>
@@ -84,7 +73,7 @@
       <div class="col s3 icon">
               <div class="card" style="margin-top:5px;">
               <div style="padding:25%; margin:8px;   ">
-              <a href="/#"><img src="{{asset('assets/frontend/image/jadwal.png')}}" alt="" class="responsive-img gambar"></a>
+              <a href="/guru/list"><img src="{{asset('assets/frontend/image/jadwal.png')}}" alt="" class="responsive-img gambar"></a>
             </div>
          <small>Jadwal</small>
     </div>
@@ -96,7 +85,8 @@
         </div>
       <small>Data Nilai</small>
    </div>
-   <pre></pre>
+</div>
+<div class="row">
 </div>
     <div class="col s3 icon">
             <div class="card" style="margin-top:5px;">
@@ -109,7 +99,7 @@
     <div class="col s3 icon">
             <div class="card" style=" margin-top:5px;">
             <div style="padding:25%; margin:8px;">
-            <a href="/iuran_warga"><img src="{{asset('assets/frontend/image/data siswa.png')}}" alt="" class="responsive-img gambar"></a>
+            <a href="/guru/listdatasiswa"><img src="{{asset('assets/frontend/image/data siswa.png')}}" alt="" class="responsive-img gambar"></a>
            </div>
         <small>Data Siswa</small>
     </div>
@@ -130,6 +120,16 @@
         <small>komunitas</small>
             </div>
     </div>
+<div class="row">
+     <div class="col s3 icon">
+            <div class="card" style=" margin-top:5px;">
+            <div style="padding:25%; margin:8px;">
+            <a href="/guru/surat"><img src="{{asset('assets/frontend/image/izin data.png')}}" alt="" class="responsive-img gambar"></a>
+           </div>
+        <small>Data Izin</small>
+            </div>
+    </div>
+</div>
 </div>
 </div>
 </div>

@@ -53,12 +53,11 @@ class LoginController extends Controller
                 if ($us["no_telp"] == input::get('no_telp')) {
                     Session::put("no_telp", $us["no_telp"]);
                     Session::put("id_sekolah", $us["id_sekolah"]);
-
                     break;
                 }
             }
              Alert()->success('success','Success');
-            return redirect()->redirect('guru/dashboard');
+            return redirect('/guru');
         } elseif (Auth::user()->role_id == 4 and Auth::user()->status == "enable") {
             $user = User::all();
             foreach ($user as $us) {

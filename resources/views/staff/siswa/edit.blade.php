@@ -77,20 +77,26 @@
                         <div class="form-group col-md-6">
                             <label for="nama_ibu" class="ul-form__label">Nama Ibu:</label>
                             <input type="text" autocomplete="off" value="{{ $siswa->nama_ibu}}" required="" name="nama_ibu" class="form-control" id="nama_ibu" placeholder="Masukan Ibu">
-
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="nama" class="ul-form__label">Tanggal Lahir:</label>
-                            <input type="date" autocomplete="off" value="{{ $siswa->tanggal_lahir }}" id="tanggal_lahir" required="" class="form-control" name="tanggal_lahir" placeholder="Masukan Tanggal Lahir">
+                         <div class="form-group col-md-6">
+                            <label for="no_telp_wali" class="ul-form__label">No Telp Wali:</label>
+                            <input type="number" autocomplete="off" required="" name="no_telp_wali" class="form-control" id="no_telp_wali" placeholder="Masukan No Telpon Wali">
 
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
+                            <label for="nama" class="ul-form__label">Tanggal Lahir:</label>
+                            <input type="date" autocomplete="off" value="{{ $siswa->tanggal_lahir }}" id="tanggal_lahir" required="" class="form-control" name="tanggal_lahir" placeholder="Masukan Tanggal Lahir">
+
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="alamat" class="ul-form__label">alamat:</label>
                             <input type="text" autocomplete="off" value="{{ $siswa->alamat}}" required="" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat Siswa">
 
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="image_siswa" class="ul-form__label">Foto Siswa:</label>
                             <input type="file" autocomplete="off" id="image_siswa" class="form-control" name="image_siswa" placeholder="Masukan Deskripsi">

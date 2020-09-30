@@ -24,23 +24,25 @@
 @foreach($data as $info)
     <div class="col s12 berita" style="
       height: 50%;
-
     ">
-    <div class="card horizontal" style="border-radius:10px 10px 10px 10px;">
+    <div class="card horizontal" style="border-radius:10px 10px 10px 10px;
+      
+">
+    <a href="/orangtua/update/{{$info->id_update}}">
       <div class="card-image">
-        <img src="/assets/image/futsal.jpg" class="responsive-img">
+        <img src="/images/{{$info->image}}" class="responsive-img image">
       </div>
       <div class="card-stacked">
-        <div class="card-content">
-          <h5>{{$info->judul}}</h5>
+        <div class="card-content" style="color: black;">
+          <h5>{{$info->title}}</h5>
           @php
-              $potong = substr($info->desc, 0, 40 )
+              $potong = substr($info->description, 0, 40 )
           @endphp
           <p>{{$potong}}</p>
         </div>
         <div class="card-action">
-          <a href="/orangtua/berita/{{$info->id_berita}}">lanjutkan</a>
         </div>
+      </a>
       </div>
     </div>
   </div>

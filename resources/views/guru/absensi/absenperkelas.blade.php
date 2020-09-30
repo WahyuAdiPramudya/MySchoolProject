@@ -27,10 +27,9 @@
             <div class="col s3 icon">
                 <div class="card" style=" margin-top:5px; border-radius: 5px;">
                     <div style="padding:25%; margin:8px;   ">
-                    	<a href="/guru/getDataSiswaAbsen/{{$kelas->id_kelas}}">
+                    	<a href="/guru/getCalender/{{$kelas->id_kelas}}">
                     		 <small>{{$kelas->nama_kelas}}</small>
                     	</a>
-                    	
                     </div>
                  </div>
             </div>

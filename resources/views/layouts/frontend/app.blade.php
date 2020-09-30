@@ -73,8 +73,8 @@
     }
 
     .gambar {
-      max-height: 5vh !important;
-      max-width: 5vh !important;
+      max-height: 4vh !important;
+      max-width: 4vh !important;
 
     }
     .image{
@@ -82,7 +82,14 @@
       max-width: 30vh !important;
     }
     .label  {
-      font-size:11px;
+      font-size:9px;
+    }
+    embed{
+      width:20vh !important;
+      height: 30vh !important;
+    }
+    .list{
+      width: 20px;
     }
 .caps{
   background-color:white;
@@ -90,7 +97,7 @@
                 padding:10px;
                 border-radius:10px;
                 text-align:center;
-                box-shadow:10px 10px 5px grey;
+                box-shadow:5px 5px 5px lightgrey;
                 transition: 0.3s;
                 padding:10px;
 }
@@ -137,10 +144,6 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="{{ URL::to('/') }}offline_material/materalize.min.js"></script>
-  <script>
-        var d = new Date();
-    document.getElementById("demo").innerHTML = d;
-  </script>
   <script>
     $(document).ready(function(){
    $('.slider').slider();  

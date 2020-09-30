@@ -31,6 +31,13 @@
             </a>
             <div class="triangle"></div>
         </li>
+        <li class="nav-item" data-item="">
+            <a class="nav-item-hold" href="{{route('SuperAdmin.Update.index')}}" >
+                <i class="nav-icon i-Book"></i>
+                <span class="nav-text">Update Informasi</span>
+            </a>
+            <div class="triangle"></div>
+        </li>
               <li class="nav-item " >
             <a class="nav-item-hold" href="/logout">
                 <i class="nav-icon i-Double-Tap"></i>
@@ -130,6 +137,12 @@
             <a href="{{ route('staff.mapel.index') }}" class="nav-item-hold" >
                 <i class="nav-icon i-Split-Horizontal-2-Window"></i>
                 <span class="item-name">Mapel</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('staff.jadwal.index') }}" class="nav-item-hold" >
+                <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+                <span class="item-name">jadwal</span>
             </a>
         </li>
 

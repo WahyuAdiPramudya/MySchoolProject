@@ -13,7 +13,7 @@ class BeritaController extends Controller
     {
         $user = Auth::user()->id_sekolah;
         $data = Berita::where('sekolah_id', $user)->get();
-        return view('orangtua.listberita', compact('data'));
+        return view('orangtua.berita.listberita', compact('data'));
 
     }
 
@@ -30,7 +30,7 @@ class BeritaController extends Controller
     public function show($id)
     {
         $data = Berita::find($id);
-        return view('orangtua.berita', compact('data'));
+        return view('orangtua.berita.berita', compact('data'));
     }
 
     public function edit($id)

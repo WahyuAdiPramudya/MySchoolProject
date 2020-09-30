@@ -35,5 +35,5 @@ class Absensi extends Model
 
     public function getSekolah(){
     	return $this->hasOne('App\Sekolah');
-    }
+    }       
 }

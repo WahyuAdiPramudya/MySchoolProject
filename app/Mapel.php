@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mapel extends Model
 {
 
-    protected $table = 'tb_map';
+    protected $table = 'tb_mapel';
 
     protected $primaryKey = 'id';
 

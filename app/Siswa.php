@@ -39,5 +39,9 @@ class Siswa extends Model
 
     public function kelas(){
         return $this->belongsTo('App\Kelas','kelas_id','id');
-    }			
+    }
+
+    public function surat(){
+        return $this->hasOne('App\Surat','id_siswa','id_siswa');
+    }		
 }

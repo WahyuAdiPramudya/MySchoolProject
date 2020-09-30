@@ -72,7 +72,7 @@ class GuruController extends Controller
 
 			$absen->save();
 		}
-		return redirect()->route('gurudashboard');
+		return redirect('/guru/successabsen');
 	}
 
 	public function postNilai(Request $req)
@@ -89,7 +89,7 @@ class GuruController extends Controller
 
 			$tugas->save();
 		}
-		return redirect()->route('gurudashboard');
+		return redirect('/guru/successnilai');
 	}
 	public function DataNilaiSiswa($id)
 	{
@@ -118,6 +118,53 @@ class GuruController extends Controller
 		$data = \App\Kelas::Where('sekolah_id', $user)->get();
 		return view('guru.absensi.absenperkelas', compact('data'));
 	}
+	public function Absenperhari() {
+		$date = date('Y-m-d');
+		$kelas= \App\Kelas::find();
+		$data = \App\absensi::where('masuk', $date)->get();
+		$sekolah = \App\Sekolah::all();
+	}
+	public function ListJadwal() 
+	{
+		$data = \App\Kelas::all();
+		return view('guru.jadwal.list', compact('data'));
 
+	}
+	public function jadwal($id_kelas)
+	{
+		$data = \App\Jadwal::where('id_kelas', $id_kelas)->get();
+		if ( count($data) > 0) {
+			foreach ($data as $jadwal) {
+			return view('guru.jadwal.jadwal', compact('jadwal'));
+		}
+			}
+	    else{
+				return view('guru.blank')->with('message','Tidak ada File Yang diupload!');
+			}
+		
+		
+	}
+	public function download($id_kelas)
+	{
+		$jadwal = \App\Jadwal::find($id_kelas);
+        $file = public_path().'/File/'. $jadwal->file_jadwal;
+        return response()->download($file, $jadwal->file_jadwal);
+	}
+
+	public function getCalender()
+	{
+		$absen = \App\absensi::get();
+		return view('guru.absensi.calender', compact('absen'));
+	}
+
+	public function SiswaByDate($id)
+	{
+		$absen = DB::table('tb_absensi as a')
+			->leftjoin('tb_siswa as s','a.id_siswa','=','s.id_siswa')
+			->select('s.nama')
+			->where('masuk', $id, 'AND', 'id_kelas', '=', $id)
+			->get();
+			return view('guru.absensi.calender', compact('absen'));
+	}	
 	
 }

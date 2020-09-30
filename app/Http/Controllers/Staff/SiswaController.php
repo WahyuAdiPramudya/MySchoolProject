@@ -49,6 +49,7 @@ class SiswaController extends Controller
              'kelas_id' => 'required',
              'nama_ayah' => 'required',
              'nama_ibu' => 'required',
+             'no_telp_wali' => 'required',
              'tanggal_lahir' => 'required',
              'alamat' => 'required',
              'image_siswa' => 'required',  
@@ -62,6 +63,7 @@ class SiswaController extends Controller
         $siswa->kelas_id = $request->kelas_id;
         $siswa->nama_ayah = $request->nama_ayah;
         $siswa->nama_ibu = $request->nama_ibu;
+        $siswa->no_telp_wali = $request->no_telp_wali;
         $siswa->tanggal_lahir = $request->tanggal_lahir;
         $siswa->alamat = $request->alamat;
          if ($request->hasFile('image_siswa')) {

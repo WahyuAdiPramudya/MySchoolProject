@@ -11,7 +11,7 @@
             </a>
           </li>
           <li class="tab col s3">
-            <a href="" class="">
+            <a href="/guru/listberita" class="">
               <i class="material-icons">pie_chart</i>
               <span style="font-size: 14px; text-transform: lowercase;
               text-transform: capitalize;">Update</span>
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="tab col s3">
-            <a href="" class="">
+            <a href="/orangtua/listupdate" class="">
               <i class="material-icons">pie_chart</i>
               <span style="font-size: 14px; text-transform: lowercase;
               text-transform: capitalize;">Update</span>
@@ -62,7 +62,7 @@
             </a>
           </li>
           <li class="tab col s3">
-            <a href="/orangtua/listprofile" class="">
+            <a href="/orangtua/profileorangtua" class="">
               <i class="material-icons">account_circle</i>
               <span style="font-size: 14px; text-transform: lowercase;
               text-transform: capitalize;">Akun</span>
